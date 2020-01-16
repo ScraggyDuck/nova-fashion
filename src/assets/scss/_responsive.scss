@@ -1,0 +1,21 @@
+@import "abstracts/breakpoints.scss";
+
+
+.footer {
+  @include min-and-max(0, 768px) {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+
+    .logo {
+      display: none;
+    }
+  }
+}
+
+.navigation {
+  @include min-and-max(0, 576px) {
+    display: block !important;
+    width: 90% !important;
+    margin: auto;
+  }
+}

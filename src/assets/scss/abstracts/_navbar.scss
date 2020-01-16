@@ -1,0 +1,105 @@
+@import "abstracts/mixins.scss";
+
+.sidebar-collapse {
+  @include navbar-collapse();
+
+  &.menu-on-left {
+    .navbar-collapse {
+      right: auto;
+      left: 0;
+      @include transform-translate-x(-88%);
+    }
+  }
+
+  .nav-open & {
+    .navbar-collapse {
+      @include transform-translate-x(0px);
+    }
+
+    .wrapper {
+      @include transform-translate-x(-150px);
+    }
+
+    .navbar-translate {
+      @include transform-translate-x(-88%);
+    }
+
+    &.menu-on-left {
+      .navbar-collapse {
+        @include transform-translate-x(0px);
+      }
+
+      .navbar-translate {
+        @include transform-translate-x(88%);
+      }
+
+      .wrapper {
+        @include transform-translate-x(150px);
+      }
+
+      #bodyClick {
+        right: auto;
+        left: 300px;
+      }
+    }
+  }
+}
+
+.navbar-toggler {
+  width: 37px;
+  height: 27px;
+  outline: 0;
+  cursor: pointer;
+
+  &.navbar-toggler-left {
+    position: relative;
+    left: 0;
+    padding-left: 0;
+  }
+
+  &:hover {
+    & .navbar-toggler-bar.bar2 {
+      width: 22px;
+    }
+  }
+}
+
+.button-dropdown {
+  .navbar-toggler-bar:nth-child(2) {
+    width: 17px;
+  }
+}
+
+.navbar-toggler-bar {
+  display: block;
+  position: relative;
+  width: 22px;
+  height: 1px;
+  border-radius: 1px;
+  background: $white-bg;
+
+  &+.navbar-toggler-bar {
+    margin-top: 7px;
+  }
+
+  &+.navbar-toggler-bar.navbar-kebab {
+    margin-top: 3px;
+  }
+
+  &.bar2 {
+    width: 17px;
+    transition: width .2s linear;
+  }
+}
+
+.navbar-toggler-bar {
+  background: $default-color !important;
+}
+
+.toggled .navbar-toggler-bar {
+  width: 24px;
+
+  &+.navbar-toggler-bar {
+    margin-top: 5px;
+  }
+}
