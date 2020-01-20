@@ -1,0 +1,32 @@
+@import "abstracts/variables.scss";
+
+.nova-top-navbar {
+  background-color: #000;
+  font-size: 15px;
+
+  .nova-top-navbar-btn-shop {
+    color: #fcf02e;
+    border-bottom: 2px solid;
+    transition: $transition;
+
+    &:hover {
+      text-decoration: none;
+      color: $orange;
+    }
+  }
+}
+
+.nav-item {
+  &.active,
+  &:hover {
+    .nav-link {
+      color: $orange !important;
+    }
+  }
+  .nav-link {
+    font-size: 14px;
+    padding: 45px 15px;
+    color: $black;
+    transition: $transition;
+  }
+}

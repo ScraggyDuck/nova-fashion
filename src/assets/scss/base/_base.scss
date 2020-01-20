@@ -5,8 +5,12 @@
 /**
  * Set up a decent box model on the root element
  */
- html {
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&display=swap");
+
+* {
   box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /**
