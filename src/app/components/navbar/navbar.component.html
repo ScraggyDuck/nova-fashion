@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-sm navbar-dark text-white nova-top-navbar">
-    <div class="container-fluid py-1">
+<nav class="navbar navbar-expand-sm navbar-dark text-white nova-top-navbar px-0">
+    <div class="container-fluid py-1 px-0">
         <div class="col-md-4 col-6 text-left">
             <i class="fa fa-phone"></i>
             (+84) 0123 456 789
@@ -9,8 +9,35 @@
             <a href="#" class="nova-top-navbar-btn-shop">Shop Now</a>
         </div>
         <div class="col-md-4 col-6 d-flex justify-content-end">
-            <div>usd</div>
-            <div>english</div>
+            <div class="dropdown show mr-3">
+                <a class="text-reset text-decoration-none" href="#" role="button" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    USD <i class="fa fa-angle-down"></i>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item active" href="#">USD $</a>
+                    <a class="dropdown-item" href="#">AUD $</a>
+                    <a class="dropdown-item" href="#">EUR €</a>
+                    <a class="dropdown-item" href="#">GBP £</a>
+                </div>
+            </div>
+            <div class="dropdown show">
+                <a class="text-reset text-decoration-none" href="#" role="button" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ENGLISH <i class="fa fa-angle-down"></i>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item active" href="#">English</a>
+                    <a class="dropdown-item" href="#">Français</a>
+                    <a class="dropdown-item" href="#">Deutsch</a>
+                    <a class="dropdown-item" href="#">Italiano</a>
+                    <a class="dropdown-item" href="#">Español</a>
+                    <a class="dropdown-item" href="#">اللغة العربية</a>
+                    <a class="dropdown-item" href="#">Polski</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
