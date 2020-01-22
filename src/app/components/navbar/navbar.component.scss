@@ -7,7 +7,7 @@
   .nova-top-navbar-btn-shop {
     color: #fcf02e;
     border-bottom: 2px solid;
-    transition: $transition;
+    // transition: $transition;
 
     &:hover {
       text-decoration: none;
@@ -25,9 +25,47 @@
 
     .dropdown-menu {
       top: 32px;
-      // right: 0 !important;
-      // left: none;
-      // transition: all 2s ease-in;
+      border-radius: 0;
+      .dropdown-item {
+        transition: all 0.2s ease-in-out;
+        &.active,
+        &:hover {
+          background-color: transparent;
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+.nova-bottom-navbar {
+  padding: 40px 0;
+}
+
+.nova-bottom-right-navbar {
+  font-size: 22px;
+  a {
+    color: #222;
+    padding: 0 10px;
+    transition: $transition;
+    &:hover {
+      text-decoration: none;
+      opacity: 0.9;
+      color: $orange;
+    }
+    span {
+      font-size: 15px;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: white;
+      width: 17px;
+      height: 17px;
+      background: $orange;
+      text-align: center;
+      line-height: 17px;
+      border-radius: 50%;
     }
   }
 }
@@ -41,7 +79,7 @@
   }
   .nav-link {
     font-size: 14px;
-    padding: 45px 15px;
+    padding: 0 15px;
     color: $black;
     transition: $transition;
   }
