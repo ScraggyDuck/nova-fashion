@@ -1,0 +1,76 @@
+@import "abstracts/variables.scss";
+
+.nova-top-footer {
+  h3 {
+    font-weight: 600;
+
+    i {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-weight: 300;
+    padding-left: 27px;
+  }
+
+  .form-control {
+    color: #666;
+    background-color: transparent;
+    height: 50px;
+
+    &:focus,
+    &:active {
+      box-shadow: none;
+      //   border: none;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    background-color: white;
+    border-color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    height: 50px;
+    transition: $transition;
+
+    &:hover {
+      color: white;
+      background-color: $orange;
+      border-color: $orange;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    h3 {
+      font-size: 36px;
+    }
+  }
+}
+.nova-bottom-footer {
+  color: #666;
+  font-weight: 300;
+  font-size: 15px;
+  span {
+    color: $orange;
+    font-weight: 700;
+  }
+
+  li {
+    padding-left: 20px;
+    display: inline-block;
+    a {
+      color: #666;
+      font-weight: 300;
+      font-size: 15px;
+      transition: $transition;
+
+      &:hover {
+        text-decoration: none;
+        color: $orange;
+      }
+    }
+  }
+}

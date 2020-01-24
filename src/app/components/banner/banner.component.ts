@@ -12,11 +12,14 @@ export class BannerComponent implements OnInit {
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 700,
-    items: 1,
-
-    nav: true
+    items: 1
+    // navText: [
+    //   '<i class="fa fa-chevron-left"></i>',
+    //   '<i class="fa fa-chevron-right"></i>'
+    // ],
+    // nav: true
   };
 
   imgs = [

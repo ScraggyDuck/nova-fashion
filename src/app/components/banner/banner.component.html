@@ -1,5 +1,11 @@
 <owl-carousel-o [options]="customOptions">
+
+
+
+
     <ng-template *ngFor="let img of imgs" carouselSlide>
+        <div class='nav-btn prev-slide'> ></div>
+        <div class='nav-btn next-slide'>></div>
         <app-banner-card [img]="img"></app-banner-card>
     </ng-template>
 
