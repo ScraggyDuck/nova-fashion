@@ -1,0 +1,19 @@
+@import "abstracts/variables.scss";
+
+.nova-men-collection,
+.nova-women-collection {
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: $transition;
+  }
+
+  &:hover {
+    img {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+}
