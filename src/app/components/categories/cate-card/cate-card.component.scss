@@ -1,0 +1,56 @@
+@import "abstracts/variables.scss";
+
+a {
+  text-decoration: none;
+
+  .nova-cate-card-container {
+    overflow: hidden;
+
+    img {
+      transition: $transition;
+    }
+  }
+  .card-img-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    transition: $transition;
+    opacity: 0;
+  }
+
+  .nova-cate-info {
+    position: absolute;
+    top: 75%;
+    width: 100%;
+    transition: $transition;
+  }
+
+  h5 {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+    color: white;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+    .card-img-overlay {
+      opacity: 1;
+    }
+
+    .nova-cate-info {
+      top: 70%;
+    }
+    h5 {
+      color: white;
+    }
+    p {
+      opacity: 1;
+    }
+  }
+}

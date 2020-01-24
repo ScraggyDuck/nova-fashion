@@ -1,0 +1,21 @@
+@media (min-width: 992px) {
+  .col-lg-2-5 {
+    -webkit-box-flex: 0;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+.nova-title {
+  font-size: 48px;
+}
+
+.nova-description {
+  font-size: 16px;
+}
+
+@media (max-width: 765px) {
+  .nova-title {
+    font-size: 36px;
+  }
+}

@@ -4,10 +4,17 @@ import { HomeComponent } from "./home.component";
 import { HomeRoutingModule } from "./home.routing";
 import { BannerModule } from "src/app/components/banner/banner.module";
 import { CollectionModule } from "src/app/components/collection/collection.module";
+import { CategoriesModule } from "src/app/components/categories/categories.module";
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, HomeRoutingModule, BannerModule, CollectionModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    BannerModule,
+    CollectionModule,
+    CategoriesModule
+  ],
   exports: [HomeComponent]
 })
 export class HomeModule {}
