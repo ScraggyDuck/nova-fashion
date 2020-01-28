@@ -1,0 +1,50 @@
+.nova-contact-container {
+  width: 100%;
+  height: 550px;
+  background-image: url(https://demotheme.site/prestashop/at_nova_demo/themes/at_nova/assets/img/modules/appagebuilder/images/bg-info.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  .nova-contact {
+    border-radius: 100%;
+    text-align: center;
+    background: rgba(243, 125, 78, 0.7);
+    padding: 50px 65px 50px;
+    font-weight: 300;
+    box-shadow: 0 0 0 10px #c26c4b;
+
+    .nova-contact-title {
+      font-size: 24px;
+      text-transform: uppercase;
+      margin: 0 0 0 5px;
+    }
+
+    .nova-contact-sub-title {
+      font-weight: 300;
+    }
+
+    .nova-contact-content {
+      h4 {
+        position: relative;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 40px 0 15px;
+        padding-top: 40px;
+
+        &::before {
+          content: "";
+          background: #fff;
+          width: 60px;
+          height: 2px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import { BannerModule } from "src/app/components/banner/banner.module";
 import { CollectionModule } from "src/app/components/collection/collection.module";
 import { CategoriesModule } from "src/app/components/categories/categories.module";
 import { InstagramModule } from "src/app/components/instagram/instagram.module";
+import { ContactModule } from "src/app/components/contact/contact.module";
 
 @NgModule({
   declarations: [HomeComponent],
@@ -15,6 +16,7 @@ import { InstagramModule } from "src/app/components/instagram/instagram.module";
     BannerModule,
     CollectionModule,
     CategoriesModule,
+    ContactModule,
     InstagramModule
   ],
   exports: [HomeComponent]
