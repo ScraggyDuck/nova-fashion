@@ -1,0 +1,8 @@
+<div class="position-relative">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template *ngFor="let img of imgs" carouselSlide>
+            <instagram-card [img]="img"></instagram-card>
+        </ng-template>
+    </owl-carousel-o>
+    <div class="nova-instagram-tag">#Instagram</div>
+</div>
