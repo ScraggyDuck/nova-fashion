@@ -1,5 +1,22 @@
 .nav-btn {
-  widows: 100px;
-  height: 100px;
-  background-color: red;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 100%;
+  line-height: 30px;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  &.next-slide {
+    right: 10px;
+  }
+
+  &.prev-slide {
+    left: 10px;
+  }
 }

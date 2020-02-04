@@ -1,0 +1,49 @@
+.category-result-header {
+  h1 {
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: 400;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+.products-selection {
+  margin: 0 0 30px;
+  padding: 10px;
+  background: #f7f7f9;
+}
+
+.dropdown .btn {
+  background: #fff;
+  color: #999;
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.view {
+  i {
+    font-size: 22px;
+    &.active {
+      color: #e97e3d;
+    }
+  }
+}
+
+.pagination {
+  width: 100%;
+  min-height: 50px;
+  padding: 20px 0;
+  padding: 0 10px;
+  margin: 0;
+  background: #f7f7f9;
+  color: #999;
+  line-height: 50px;
+}

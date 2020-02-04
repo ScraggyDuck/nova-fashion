@@ -1,0 +1,72 @@
+.facet-title {
+  margin: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  color: #222;
+  font-weight: 600;
+}
+
+.facet-option {
+  p {
+    flex-grow: 1;
+    color: #999;
+    font-size: 14px;
+  }
+}
+.facet-label-circle {
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 50%;
+  margin-right: 6px;
+  display: block;
+}
+
+.facet-ckb {
+  height: 15px;
+  width: 15px;
+  margin-right: 6px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e97e3d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e97e3d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-progress {
+  background: #e97e3d !important;
+}
+
+.facet-label-price {
+  font-size: 15px;
+  margin: 0;
+}
+
+

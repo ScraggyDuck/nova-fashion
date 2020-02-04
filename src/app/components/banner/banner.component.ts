@@ -15,11 +15,6 @@ export class BannerComponent implements OnInit {
     dots: true,
     navSpeed: 700,
     items: 1
-    // navText: [
-    //   '<i class="fa fa-chevron-left"></i>',
-    //   '<i class="fa fa-chevron-right"></i>'
-    // ],
-    // nav: true
   };
 
   imgs = [

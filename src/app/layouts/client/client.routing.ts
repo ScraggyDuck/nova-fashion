@@ -6,7 +6,23 @@ const routes: Routes = [
   {
     path: "",
     component: ClientComponent,
-    loadChildren: "../../routes/home/home.module#HomeModule"
+    children: [
+      {
+        path: "",
+        loadChildren: "../../routes/home/home.module#HomeModule"
+      },
+
+      {
+        path: "clothes",
+        loadChildren:
+          "../../routes/product-category/product-category.module#ProductCategoryModule"
+      },
+      {
+        path: "product-detail",
+        loadChildren:
+          "../../routes/product-detail/product-detail.module#ProductDetailModule"
+      }
+    ]
   }
 ];
 
