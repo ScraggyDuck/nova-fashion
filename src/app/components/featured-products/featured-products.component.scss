@@ -1,0 +1,28 @@
+.nova-title {
+  font-size: 48px;
+}
+
+@media (max-width: 765px) {
+  .nova-title {
+    font-size: 36px;
+  }
+}
+
+.btn-load-more {
+  width: 280px;
+  height: 60px;
+  border-radius: 0;
+  border: 1px solid black;
+  color: #666;
+  text-align: center;
+  background-color: white;
+  line-height: 60px;
+  padding: 0;
+  font-weight: 600;
+
+  &:hover {
+    background-color: #e97e3d;
+    color: #fff;
+    border-color: transparent;
+  }
+}

@@ -3,7 +3,7 @@
     <p class="nova-description">
         Browse our website for the hottest items in the marketplace now
     </p>
-    <div class="row px-xl-3 px-5">
+    <div class="row px-xl-3">
         <div class="col-lg-2-5 px-2 py-3" *ngFor="let cate of cates; let i = index"
             [ngClass]="{'col-md-4': i < 3, 'col-md-6': i > 2}">
             <cate-card [cate]="cate"></cate-card>

@@ -24,3 +24,17 @@
 //     z-index: 10;
 //   }
 // }
+
+.nova-title {
+  font-size: 48px;
+}
+
+@media (max-width: 765px) {
+  .nova-title {
+    font-size: 36px;
+  }
+}
+
+.nova-description {
+  font-size: 16px;
+}

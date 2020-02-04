@@ -7,6 +7,9 @@ import { CollectionModule } from "src/app/components/collection/collection.modul
 import { CategoriesModule } from "src/app/components/categories/categories.module";
 import { InstagramModule } from "src/app/components/instagram/instagram.module";
 import { ContactModule } from "src/app/components/contact/contact.module";
+import { FeaturedProductsModule } from "src/app/components/featured-products/featured-products.module";
+import { TrendingModule } from "src/app/components/trending/trending.module";
+import { LookbookModule } from "src/app/components/lookbook/lookbook.module";
 
 @NgModule({
   declarations: [HomeComponent],
@@ -17,7 +20,10 @@ import { ContactModule } from "src/app/components/contact/contact.module";
     CollectionModule,
     CategoriesModule,
     ContactModule,
-    InstagramModule
+    InstagramModule,
+    FeaturedProductsModule,
+    TrendingModule,
+    LookbookModule
   ],
   exports: [HomeComponent]
 })

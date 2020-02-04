@@ -8,3 +8,31 @@
     width: 100%;
   }
 }
+
+h4 {
+  color: #222;
+  font-weight: 600;
+  font-size: 90px;
+  line-height: 50px;
+  padding: 30px 0;
+}
+
+.btn {
+  width: 250px;
+  height: 50px;
+  border-radius: 0;
+  border: 1px solid #666;
+  color: black;
+  text-align: center;
+  background-color: transparent;
+  line-height: 50px;
+  padding: 0;
+  font-weight: 600;
+  margin-top: 50px;
+
+  &:hover {
+    background-color: #e97e3d;
+    color: #fff;
+    border-color: transparent;
+  }
+}
