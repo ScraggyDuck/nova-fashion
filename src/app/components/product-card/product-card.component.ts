@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { OwlOptions } from "ngx-owl-carousel-o";
 
 @Component({
@@ -7,6 +7,8 @@ import { OwlOptions } from "ngx-owl-carousel-o";
   styleUrls: ["./product-card.component.scss"]
 })
 export class ProductCardComponent implements OnInit {
+  @Input() product: any;
+
   imgs = [
     "https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/46818702_134383644231768_8549917302154951480_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=Op4PdGbWNt0AX8h5cb8&oh=f709aa6410c3533d02995c5064f6b001&oe=5ECCDC01",
     "https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/47584194_2153147434948264_4546639399340987400_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=JQKx-JVA5tUAX-g00WJ&oh=3e6f3c132aaf4745dbaeba5d3dc998fb&oe=5ED1DD4E",

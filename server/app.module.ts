@@ -1,7 +1,9 @@
 import { Module } from "@nestjs/common";
 import { AngularUniversalModule } from "@nestjs/ng-universal";
 import { join } from "path";
-import { TestController } from './src/test/test.controller';
+
+import { MongooseModule } from "@nestjs/mongoose";
+import { ProductModule } from "./src/product/product.module";
 
 const domino = require("domino");
 const fs = require("fs");
@@ -41,8 +43,13 @@ global["CSS"] = null;
       viewsPath: join(process.cwd(), "dist/browser"),
       bundle: require("../server/main"),
       liveReload: true
-    })
+    }),
+    MongooseModule.forRoot("mongodb://localhost/demo-db", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }),
+    ProductModule
   ],
-  controllers: [TestController]
+  controllers: []
 })
 export class ApplicationModule {}
