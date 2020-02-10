@@ -1,0 +1,15 @@
+<div class="container-fluid text-center my-5">
+    <h4 class="nova-title font-weight-bold">Related Products </h4>
+    <p class="nova-description">
+        (There are 8 other products in the same category)
+    </p>
+    <div class="row px-xl-3 pt-5">
+        <div class="col-12">
+            <owl-carousel-o [options]="customOptions" #owlCar>
+                <ng-template *ngFor="let img of imgs" carouselSlide>
+                    <app-product-card></app-product-card>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>

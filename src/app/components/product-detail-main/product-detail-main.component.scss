@@ -1,0 +1,213 @@
+.nav-item {
+  border: none;
+
+  padding-top: 10px;
+}
+.nav-tabs {
+  border: none;
+}
+
+.nav-link {
+  border: none;
+  padding: 3px;
+  border-radius: 0;
+  opacity: 0.5;
+
+  &:hover,
+  &.active {
+    opacity: 1;
+    background: transparent;
+    cursor: default;
+    border: 1px solid;
+  }
+}
+
+// Right
+
+.nova-product-detail-content {
+  .name {
+    margin: 0 0 20px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .review {
+    a {
+      text-decoration: none;
+      color: #666;
+      &:hover {
+        color: #e97e3d;
+      }
+    }
+    margin: 0 0 20px;
+    font-size: 16px;
+  }
+
+  .current-price {
+    color: #e97e3d;
+    font-size: 30px;
+    font-weight: 600;
+
+    .discount-percentage {
+      color: #f7525a;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+
+  .regular-price {
+    text-decoration: line-through;
+    font-weight: 300;
+    font-size: 20px;
+    color: #acaaa6;
+  }
+
+  .tax-shipping-delivery-label {
+    font-size: 14px;
+    color: #666;
+    display: block;
+  }
+
+  .product-availability {
+    color: #4cbb6c;
+    background: #d4edda;
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 10px 0;
+  }
+
+  .product-attributes-label {
+    img {
+      height: 35px;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+    }
+    .label {
+      color: #222;
+      font-weight: 600;
+      min-width: 100px;
+      margin-bottom: 0;
+    }
+
+    span {
+      font-size: 14px;
+      color: #666;
+    }
+  }
+
+  .description-short {
+    font-size: 14px;
+    color: #666;
+    margin: 16px 0;
+  }
+
+  .product-variants {
+    .control-label {
+      width: 100px;
+      float: left;
+      line-height: 30px;
+      display: block;
+      font-weight: 400;
+      color: #666;
+      margin-right: 10px;
+    }
+
+    .input-container {
+      margin: 10px;
+      list-style: none;
+      color: #414141;
+      text-align: center;
+      font-size: 14px;
+      background: #fff;
+      padding: 5px 10px;
+      font-weight: 600;
+      border: 2px solid #e6e6e6;
+
+      &.active {
+        border: 2px solid #e97e3d;
+        color: #e97e3d;
+      }
+    }
+  }
+
+  .social-sharing {
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 20px;
+
+    a {
+      text-decoration: none;
+      color: #666;
+    }
+
+    .facebook:hover {
+      a {
+        color: #3c5a98;
+      }
+    }
+    .twitter:hover {
+      a {
+        color: #55acee;
+      }
+    }
+    .googleplus:hover {
+      a {
+        color: #d6492f;
+      }
+    }
+    .pinterest:hover {
+      a {
+        color: #cb2027;
+      }
+    }
+  }
+
+  .block-reassurance-item {
+    padding: 7px 20px;
+    margin: 10px 0;
+    background: #f4f4f4;
+
+    // display: flex;
+    // display: inline-block;
+    width: 100%;
+
+    // box-align: center;
+
+    // align-items: center;
+
+    border-left: 3px solid #e97e3d;
+  }
+
+  .functional-buttons {
+    transition: all 0.3s ease-in-out;
+    height: 40px;
+    a {
+      // color: white;
+      text-decoration: none;
+    }
+    .button-container {
+      flex-grow: 1;
+      text-align: center;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 40px;
+    }
+
+    .add-to-cart {
+      background-color: #222;
+      a {
+        color: white;
+      }
+    }
+    .btn-func:hover {
+      transition: all 0.3s ease-in-out;
+      background-color: #e97e3d;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}

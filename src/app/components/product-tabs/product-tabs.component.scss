@@ -1,0 +1,30 @@
+.nav-tabs {
+  border: none;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 0;
+  margin-bottom: 50px;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link.active {
+  color: #e97e3d;
+  border-bottom: 2px solid #e97e3d;
+  background: transparent;
+  cursor: default;
+}
+
+.nav-link {
+  position: relative;
+  color: #666;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 20px 0;
+  text-transform: none;
+  margin: 0 50px -1px 0;
+  border: none;
+}
