@@ -18,7 +18,7 @@ const routes: Routes = [
           "../../routes/product-category/product-category.module#ProductCategoryModule"
       },
       {
-        path: "product-detail",
+        path: "clothes/:id",
         loadChildren:
           "../../routes/product-detail/product-detail.module#ProductDetailModule"
       }

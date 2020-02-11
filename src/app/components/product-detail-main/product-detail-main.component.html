@@ -4,8 +4,7 @@
 
             <div class="tab-content">
                 <div id="product-1" class="tab-pane fade in active show">
-                    <img src="https://demotheme.site/prestashop/at_nova_demo/32-large_default/brown-bear-printed-sweater.jpg"
-                        alt="" class="img-fluid">
+                    <img [src]="product?.image" alt="" class="img-fluid">
                 </div>
                 <div id="product-2" class="tab-pane fade">
                     <img src="https://demotheme.site/prestashop/at_nova_demo/33-large_default/brown-bear-printed-sweater.jpg"
@@ -25,8 +24,7 @@
             <ul class="nav nav-tabs row" role="tablist">
                 <li class="nav-item col-3">
                     <a class="nav-link active" data-toggle="tab" href="#product-1" role="tab">
-                        <img src="https://demotheme.site/prestashop/at_nova_demo/32-large_default/brown-bear-printed-sweater.jpg"
-                            alt="" class="img-fluid">
+                        <img [src]="product?.image" alt="" class="img-fluid">
                     </a>
                 </li>
                 <li class="nav-item col-3">
@@ -51,16 +49,16 @@
             </ul>
         </div>
         <div class="col-md-6 col-lg-7 nova-product-detail-content">
-            <h4 class="name">State Sungalesses</h4>
+            <h4 class="name">{{product?.name}}</h4>
             <div class="review">
                 <a href="#"> <i class="fa fa-pencil"></i> Add Reviews </a>
             </div>
             <div class="prices">
                 <div class="current-price d-inline">
-                    $32.31
+                    ${{product?.price}}
                     <span class="discount-percentage">(Save 10%)</span>
                 </div>
-                <div class="regular-price d-inline"> $35.90</div>
+                <div class="regular-price d-inline"> ${{product?.regularPrice}}</div>
                 <div class="tax-shipping-delivery-label">
                     Tax excluded
                     <div class="delivery-information">

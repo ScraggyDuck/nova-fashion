@@ -5,9 +5,17 @@ export const ProductSchema = new mongoose.Schema({
   image: String,
   price: Number,
   regularPrice: Number,
-  colors: [],
+  colors: [String],
   ratingsQuantity: Number,
   quantity: Number,
   size: String,
-  categories: []
+  categories: [String],
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
+  isFeatured: {
+    type: Boolean,
+    default: false
+  }
 });

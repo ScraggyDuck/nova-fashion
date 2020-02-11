@@ -3,8 +3,8 @@
     <div class="row px-xl-3">
         <div class="col-12">
             <owl-carousel-o [options]="customOptions" #owlCar>
-                <ng-template *ngFor="let img of imgs" carouselSlide>
-                    <app-product-card></app-product-card>
+                <ng-template *ngFor="let product of products" carouselSlide>
+                    <app-product-card [product]="product"></app-product-card>
                 </ng-template>
             </owl-carousel-o>
         </div>

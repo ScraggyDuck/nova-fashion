@@ -5,9 +5,11 @@ export interface Product extends Document {
   image: String;
   price: Number;
   regularPrice: Number;
-  colors: [];
+  colors: [String];
   ratingsQuantity: Number;
   quantity: Number;
   size: String;
-  categories: [];
+  categories: [String];
+  createdAt: Date;
+  isFeatured: Boolean;
 }

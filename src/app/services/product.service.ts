@@ -13,6 +13,10 @@ export class ProductService {
     return this.http.get(`${api_url}${rq_product}`);
   }
 
+  getProductById(id: any): Observable<any> {
+    return this.http.get(`${api_url}${rq_product}/${id}`);
+  }
+
   handleError(err) {
     if (err.error instanceof Error) {
       console.log(`Client-side error: ${err.error.message}`);
