@@ -1,12 +1,13 @@
 export interface CreateProductDTO {
   name: String;
-  image: String;
+  images: [String];
   price: Number;
+  desciription: String;
   regularPrice: Number;
   colors: [String];
   ratingsQuantity: Number;
   quantity: Number;
-  size: String;
+  sizes: [String];
   categories: [String];
   createdAt: Date;
   isFeatured: Boolean;

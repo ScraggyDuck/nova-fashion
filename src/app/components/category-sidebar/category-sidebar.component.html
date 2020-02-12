@@ -1,5 +1,5 @@
 <h6 class="nova-sidebar-title mb-5">MEN</h6>
 <h6 class="nova-sidebar-title">FILTER BY</h6>
-<sidebar-filter></sidebar-filter>
+<sidebar-filter [filter]="filter" (onFilter)="_onFilter()"></sidebar-filter>
 <h6 class="nova-sidebar-title">NEW PRODUCTS</h6>
 <sidebar-new-products></sidebar-new-products>

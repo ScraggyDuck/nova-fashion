@@ -1,7 +1,7 @@
 <div class="card">
     <a class="text-decoration-none" [routerLink]="['/clothes', product._id]">
         <div class="position-relative">
-            <img class="card-img-top" [src]="product.image" />
+            <img class="card-img-top" [src]="product.images[0]" />
             <!-- <owl-carousel-o [options]="customOptions" #owlCar>
             <ng-template *ngFor="let img of imgs" carouselSlide>
                 <img class="img-fluid" [src]="img" alt="Instagram Image">

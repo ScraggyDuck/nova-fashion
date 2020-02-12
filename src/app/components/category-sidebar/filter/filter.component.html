@@ -1,55 +1,28 @@
 <div id="search_filters">
     <section class="facet">
         <p class="facet-title">Color</p>
-        <div class="facet-option d-flex align-items-center">
-            <span class="facet-label-circle label-white"></span>
-            <p class="m-0">White</p>
-            <span class="facet-magnitude">(1)</span>
-        </div>
-        <div class="facet-option d-flex align-items-center">
-            <span class="facet-label-circle label-black"></span>
-            <p class="m-0">Black</p>
+        <div [class.active]="colorItem.isSelected" *ngFor="let colorItem of filter.colors"
+            class="facet-option d-flex align-items-center" (click)="onChangeFilter(colorItem)">
+            <span [ngStyle]="{'background-color': colorItem.value}" class="facet-label-circle"></span>
+            <p class="m-0 text-capitalize">{{colorItem.value}}</p>
             <span class="facet-magnitude">(1)</span>
         </div>
     </section>
-
-
     <section class="facet">
         <p class="facet-title">Size</p>
-        <div class="facet-option d-flex align-items-center">
-            <input class="facet-ckb" type="checkbox">
-            <p class="m-0">S</p>
-            <span class="facet-magnitude">(1)</span>
-        </div>
-        <div class="facet-option d-flex align-items-center">
-            <input class="facet-ckb" type="checkbox">
-            <p class="m-0">M</p>
-            <span class="facet-magnitude">(1)</span>
-        </div>
-        <div class="facet-option d-flex align-items-center">
-            <input class="facet-ckb" type="checkbox">
-            <p class="m-0">L</p>
-            <span class="facet-magnitude">(1)</span>
-        </div>
-        <div class="facet-option d-flex align-items-center">
-            <input class="facet-ckb" type="checkbox">
-            <p class="m-0">XL</p>
+        <div [class.active]="sizeItem.isSelected" *ngFor="let sizeItem of this.filter.sizes"
+            class="facet-option d-flex align-items-center" (click)="onChangeFilter(sizeItem)">
+            <span class="facet-label-square"></span>
+            <p class="m-0">{{sizeItem.value}}</p>
             <span class="facet-magnitude">(1)</span>
         </div>
     </section>
-
-
-
     <section class="facet">
         <p class="facet-title">Availability</p>
-        <div class="facet-option d-flex align-items-center">
-            <input class="facet-ckb" type="checkbox">
-            <p class="m-0">In stock</p>
-            <span class="facet-magnitude">(1)</span>
-        </div>
-        <div class="facet-option d-flex align-items-center">
-            <input class="facet-ckb" type="checkbox">
-            <p class="m-0">Not available</p>
+        <div [class.active]="item.isSelected" *ngFor="let item of filter.availabilitys"
+            class="facet-option d-flex align-items-center" (click)="onChangeFilter(item)">
+            <span class="facet-label-square"></span>
+            <p class="m-0">{{item.name}}</p>
             <span class="facet-magnitude">(1)</span>
         </div>
     </section>

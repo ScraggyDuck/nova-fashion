@@ -15,7 +15,7 @@
 <div class="container-fluid mt-5 ">
     <div class="row mb-5">
         <div class="col-lg-3 col-md-4">
-            <app-category-sidebar></app-category-sidebar>
+            <app-category-sidebar [filter]="filter" (onFilterProducts)="onFilterProducts()"></app-category-sidebar>
         </div>
         <div class="col-lg-9 col-md-8">
             <app-category-result [products]="products"></app-category-result>

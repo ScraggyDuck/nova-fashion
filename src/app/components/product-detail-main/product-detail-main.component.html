@@ -2,51 +2,31 @@
     <div class="row">
         <div class="col-md-6 col-lg-5">
 
-            <div class="tab-content">
-                <div id="product-1" class="tab-pane fade in active show">
-                    <img [src]="product?.image" alt="" class="img-fluid">
-                </div>
-                <div id="product-2" class="tab-pane fade">
-                    <img src="https://demotheme.site/prestashop/at_nova_demo/33-large_default/brown-bear-printed-sweater.jpg"
-                        alt="" class="img-fluid">
-                </div>
-                <div id="product-3" class="tab-pane fade">
-                    <img src="https://demotheme.site/prestashop/at_nova_demo/31-large_default/brown-bear-printed-sweater.jpg"
-                        alt="" class="img-fluid">
-                </div>
-                <div id="product-4" class="tab-pane fade">
-                    <img src="https://demotheme.site/prestashop/at_nova_demo/30-large_default/brown-bear-printed-sweater.jpg"
-                        alt="" class="img-fluid">
-                </div>
+            <div class="nova-tab-content">
 
+
+                <ngb-tabset [destroyOnHide]="false" #t="ngbTabset">
+                    <ngb-tab *ngFor="let image of product?.images; let i = index" [id]='i'>
+                        <ng-template ngbTabContent>
+                            <img [src]="image" alt="" class="w-100">
+                        </ng-template>
+                    </ngb-tab>
+                </ngb-tabset>
             </div>
 
-            <ul class="nav nav-tabs row" role="tablist">
-                <li class="nav-item col-3">
-                    <a class="nav-link active" data-toggle="tab" href="#product-1" role="tab">
-                        <img [src]="product?.image" alt="" class="img-fluid">
-                    </a>
-                </li>
-                <li class="nav-item col-3">
-                    <a class="nav-link" data-toggle="tab" href="#product-2" role="tab">
-                        <img src="https://demotheme.site/prestashop/at_nova_demo/33-large_default/brown-bear-printed-sweater.jpg"
-                            alt="" class="img-fluid">
-                    </a>
-                </li>
-                <li class="nav-item col-3">
-                    <a class="nav-link" data-toggle="tab" href="#product-3" role="tab">
-                        <img src="https://demotheme.site/prestashop/at_nova_demo/31-large_default/brown-bear-printed-sweater.jpg"
-                            alt="" class="img-fluid">
-                    </a>
-                </li>
-                <li class="nav-item col-3">
-                    <a class="nav-link" data-toggle="tab" href="#product-4" role="tab">
-                        <img src="https://demotheme.site/prestashop/at_nova_demo/30-large_default/brown-bear-printed-sweater.jpg"
-                            alt="" class="img-fluid">
-                    </a>
-                </li>
-
+            <ul ngbNav #nav="ngbNav" class="nav-tabs nova-nav-image">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template *ngFor="let image of product?.images; let i = index" carouselSlide>
+                        <li ngbNavItem>
+                            <a ngbNavLink>
+                                <img [src]="image" (click)="t.select(i)" class="img-fluid">
+                            </a>
+                        </li>
+                    </ng-template>
+                </owl-carousel-o>
             </ul>
+
+
         </div>
         <div class="col-md-6 col-lg-7 nova-product-detail-content">
             <h4 class="name">{{product?.name}}</h4>
@@ -67,7 +47,7 @@
                 </div>
                 <div class="product-availability">
                     <i class="fa fa-check" aria-hidden="true"></i>
-                    In stock
+                    {{product?.quantity > 0 ? 'In stock' : 'Not available'}}
                 </div>
                 <div class="product-attributes-label">
                     <div class="product-manufacturer">
@@ -77,14 +57,13 @@
                         </a>
                     </div>
                     <div class="product-reference"> <label class="label">Reference </label> <span>demo_3</span></div>
-                    <div class="product-quantities"> <label class="label">In stock</label> <span>1188 Items</span></div>
+                    <div class="product-quantities"> <label class="label">
+                            {{product?.quantity > 0 ? 'In stock' : 'Not available'}}</label> <span>{{product?.quantity}}
+                            Items</span></div>
                 </div>
             </div>
             <div class="description-short">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
+                {{product?.desciription}}
             </div>
             <div class="product-actions">
                 <div class="product-variants d-flex align-items-center">

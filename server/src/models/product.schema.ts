@@ -2,13 +2,14 @@ import * as mongoose from "mongoose";
 
 export const ProductSchema = new mongoose.Schema({
   name: String,
-  image: String,
+  images: [String],
   price: Number,
+  desciription: String,
   regularPrice: Number,
   colors: [String],
   ratingsQuantity: Number,
   quantity: Number,
-  size: String,
+  sizes: [String],
   categories: [String],
   createdAt: {
     type: Date,

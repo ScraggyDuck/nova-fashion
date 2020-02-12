@@ -3,8 +3,10 @@
 
   padding-top: 10px;
 }
-.nav-tabs {
+.nova-nav-image {
+  display: block !important;
   border: none;
+  overflow: hidden;
 }
 
 .nav-link {
@@ -18,7 +20,10 @@
     opacity: 1;
     background: transparent;
     cursor: default;
-    border: 1px solid;
+
+    img {
+      border: 1px solid;
+    }
   }
 }
 

@@ -9,10 +9,24 @@
 }
 
 .facet-option {
+  cursor: pointer;
+
+  &.active {
+    p {
+      color: #e97e3d;
+      font-weight: bold;
+      margin-left: 20px !important;
+    }
+
+    .facet-label-square {
+      background-color: #e97e3d;
+    }
+  }
   p {
     flex-grow: 1;
     color: #999;
     font-size: 14px;
+    transition: all 0.3s ease-in;
   }
 }
 .facet-label-circle {
@@ -20,6 +34,14 @@
   height: 15px;
   border: 1px solid rgb(153, 153, 153);
   border-radius: 50%;
+  margin-right: 6px;
+  display: block;
+}
+
+.facet-label-square {
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgb(153, 153, 153);
   margin-right: 6px;
   display: block;
 }
@@ -68,5 +90,3 @@
   font-size: 15px;
   margin: 0;
 }
-
-
