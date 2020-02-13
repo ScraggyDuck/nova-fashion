@@ -1,14 +1,14 @@
-export interface CreateProductDTO {
-  name: String;
-  images: [String];
-  price: Number;
-  desciription: String;
-  regularPrice: Number;
-  colors: [String];
-  ratingsQuantity: Number;
-  quantity: Number;
-  sizes: [String];
-  categories: [String];
+export class CreateProductDTO {
+  name: string;
+  images: [string];
+  price: number;
+  desciription: string;
+  regularPrice: number;
+  colors: [string];
+  ratingsQuantity: number;
+  quantity: number;
+  sizes: [string];
+  categories: [string];
   createdAt: Date;
-  isFeatured: Boolean;
+  isFeatured: boolean;
 }

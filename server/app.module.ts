@@ -4,6 +4,8 @@ import { join } from "path";
 
 import { MongooseModule } from "@nestjs/mongoose";
 import { ProductModule } from "./src/product/product.module";
+import { AuthModule } from './src/auth/auth.module';
+import { SharedModule } from './src/shared/shared.module';
 
 const domino = require("domino");
 const fs = require("fs");
@@ -48,7 +50,9 @@ global["CSS"] = null;
       useNewUrlParser: true,
       useUnifiedTopology: true
     }),
-    ProductModule
+    ProductModule,
+    AuthModule,
+    SharedModule
   ],
   controllers: []
 })
