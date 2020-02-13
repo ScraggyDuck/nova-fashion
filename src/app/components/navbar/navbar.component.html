@@ -108,7 +108,108 @@
 
     <div class="col-4 col-lg-3 nova-bottom-right-navbar d-flex justify-content-end">
         <a href="#"><i class="fa fa-search"></i></a>
-        <a href="#"><i class="fa fa-user"></i></a>
+        <div class="dropdown">
+            <div class="open">
+                <a>
+                    <i class="fa fa-user"></i>
+                </a>
+                <div class="popup-content dropdown-menu">
+                    <div class="row dropdown">
+                        <div class="col-sm-12 full-width active">
+                            <h3 class="nova-login-title mb-2">Login to your account </h3>
+                            <form>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" required=""
+                                        placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="email" required=""
+                                        placeholder="Password">
+                                </div>
+                                <div class="form-group d-flex justify-content-between">
+                                    <div>
+                                        <input type="checkbox" name="rememberme">
+                                        <label class="form-control-label pl-2">Remember Me</label>
+                                    </div>
+                                    <div class="text-right">
+                                        <a href="#">Forgot Password ?</a>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <button type="submit" class="form-control-submit btn btn-primary w-100 mb-3">
+                                        Login
+                                    </button>
+                                    <div class="checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" id="Register" name="acceptLopd">
+                                            <a href="#">I accept conditions</a>
+                                            <span style="color:red">*</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <a class="p-0" href="#">No account? Create one here ?</a>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- <div class="leo-form leo-register-form col-sm-12 full-width leo-form-inactive">
+                            <h3 class="leo-register-title"> New Account Register</h3>
+                            <form class="lql-form-content leo-register-form-content" action="#" method="post">
+                                <div class="form-group lql-form-mesg has-success"></div>
+                                <div class="form-group lql-form-mesg has-danger"></div>
+                                <div class="form-group lql-form-content-element"> <input type="text"
+                                        class="form-control lql-register-firstname" name="lql-register-firstname"
+                                        placeholder="First Name"></div>
+                                <div class="form-group lql-form-content-element"> <input type="text"
+                                        class="form-control lql-register-lastname" name="lql-register-lastname"
+                                        required="" placeholder="Last Name"></div>
+                                <div class="form-group lql-form-content-element"> <input type="email"
+                                        class="form-control lql-register-email" name="lql-register-email" required=""
+                                        placeholder="Email Address"></div>
+                                <div class="form-group lql-form-content-element"> <input type="password"
+                                        class="form-control lql-register-pass" name="lql-register-pass" required=""
+                                        placeholder="Password"></div> <label>
+                                    <div class="form-group lql-form-content-element leo-form-chk"> <input
+                                            type="checkbox" class="lql-register-check" name="lql-register-check">I agree
+                                        to the terms.</div>
+                                </label>
+                                <div class="form-group text-right"> <button type="submit" name="submit"
+                                        class="form-control-submit lql-form-bt lql-register-bt btn btn-primary"> <span
+                                            class="leoquicklogin-loading leoquicklogin-cssload-speeding-wheel"></span>
+                                        <i class="leoquicklogin-icon leoquicklogin-success-icon material-icons"></i> <i
+                                            class="leoquicklogin-icon leoquicklogin-fail-icon material-icons"></i>
+                                        <span class="lql-bt-txt"> Create an Account </span> </button>
+                                    <div class="checkbox idxjslopd-check-newsletter"><label
+                                            class="form-check-label"><input type="checkbox" id="Register"
+                                                name="acceptLopd" class=""><a href="#">I accept conditions</a> <span
+                                                style="color:red">*</span></label><br><span
+                                            class="check-error-newsletter2" style="display:none;color:red;">Click on the
+                                            checkbox.</span><span class="text_bt"><span></span></span></div>
+                                </div>
+                                <div class="form-group lql-calllogin">
+                                    <div>Already have an account?</div> <a role="button" href="#"
+                                        class="lql-calllogin-action">Log in instead</a> Or <a role="button" href="#"
+                                        class="lql-calllogin-action lql-callreset-action">Reset password</a>
+                                </div>
+                            </form>
+                        </div> -->
+                    </div>
+                    <div class="nova-social-login">
+                        <h3 class="nova-social-login-title"> Connect with Social Networks</h3>
+                        <button class="btn social-login-btn facebook-login-btn">
+                            <span class="fa fa-facebook"></span>
+                        </button>
+                        <button class="btn social-login-btn google-login-btn">
+                            <span class="fa fa-google"></span>
+                        </button>
+                        <button class="btn social-login-btn twitter-login-btn">
+                            <span class="fa fa-twitter"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <a class="position-relative" href="#">
             <i class="fa fa-heart"></i>
             <span>0</span>

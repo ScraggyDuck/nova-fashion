@@ -84,3 +84,91 @@
     transition: $transition;
   }
 }
+
+.nova-bottom-right-navbar {
+  .dropdown {
+    .nova-login-title {
+      font-size: 22px;
+    }
+
+    &:hover {
+      .popup-content {
+        display: block;
+      }
+    }
+    .popup-content {
+      width: 300px;
+      padding: 20px;
+      margin: 0;
+      position: absolute;
+      top: 100%;
+      background: #fff;
+      border: none;
+      min-width: 160px;
+      z-index: 999999;
+      display: none;
+      left: inherit;
+      text-align: left;
+      right: 0;
+      transition: opacity 0.3s linear 0s;
+      border-radius: 0;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+      .form-control-submit {
+        display: block;
+        width: 100%;
+        background-color: #222;
+        font-weight: 600;
+        transition: none;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        transition: $transition;
+        text-transform: uppercase;
+
+        &:hover {
+          background-color: #e97e3d;
+        }
+      }
+    }
+
+    .nova-social-login {
+      margin-top: 10px;
+      padding: 20px 0;
+      border-top: 2px dashed #e6e6e6;
+      text-align: center;
+      .nova-social-login-title {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      .social-login-btn {
+        display: inline-block;
+        font-size: 0;
+        position: relative;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 54px;
+        border-radius: 50px;
+        margin: 0 10px;
+        span {
+          color: #fff;
+          font-size: 18px;
+        }
+
+        &.facebook-login-btn {
+          background: #3b5998;
+        }
+        &.google-login-btn {
+          background: #e74c3c;
+        }
+        &.twitter-login-btn {
+          background: #1da1f2;
+        }
+      }
+    }
+  }
+}
