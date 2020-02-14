@@ -7,8 +7,8 @@ export class MailerService {
     let mailTransporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "nova.mailer.test@gmail.com",
-        pass: "novamailer"
+        user: process.env.EMAIL_NAME,
+        pass: process.env.EMAIL_PASSWORD
       }
     });
 

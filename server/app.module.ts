@@ -46,13 +46,16 @@ import { ConfigModule } from "@nestjs/config";
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: "./.env"
+    }),
     AngularUniversalModule.forRoot({
       viewsPath: join(process.cwd(), "dist/browser"),
       bundle: require("../server/main"),
       liveReload: true
     }),
-    MongooseModule.forRoot("mongodb://localhost/demo-db", {
+    MongooseModule.forRoot(process.env.DATABASE_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     }),
