@@ -3,7 +3,7 @@ import { IsString, MaxLength, MinLength, Matches } from "class-validator";
 export class LoginDTO {
   @IsString()
   @MinLength(4)
-  @MaxLength(20)
+  @MaxLength(40)
   email: string;
 
   @IsString()
@@ -18,27 +18,21 @@ export class LoginDTO {
 export class RegisterDTO {
   @IsString()
   @MinLength(4)
-  @MaxLength(20)
+  @MaxLength(40)
   email: string;
 
   @IsString()
-  @MinLength(4)
   @MaxLength(20)
-  fisrtName: string;
+  firstName: string;
 
   @IsString()
-  @MinLength(4)
   @MaxLength(20)
   lastName: string;
 
   @IsString()
-  @MinLength(4)
-  @MaxLength(20)
   gender: string;
 
   @IsString()
-  @MinLength(4)
-  @MaxLength(20)
   birthdate: string;
 
   @IsString()

@@ -14,6 +14,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   isLogged = false;
   openBoxUser = false;
 
+  isLoginFailed = false;
+
   currentUser: any = {};
   subscription: Subscription;
 
@@ -40,18 +42,25 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   onLogin() {
     this.subscription = this.userService
-      .login({ username: "Quocvietcoi4", password: "A123bb98" })
+      .login({ email: this.email, password: this.password })
       .subscribe(
         user => {
-          console.log(user);
           this.localService.setItem("user", user);
           this.isLogged = true;
           this.openBoxUser = false;
           this.currentUser = user;
+          this.isLoginFailed = false;
+          (this.email = ""), (this.password = "");
         },
-        err => console.log(err)
+        err => (this.isLoginFailed = true)
       );
   }
+
+  logout() {
+    this.userService.logout();
+    this.isLogged = false;
+  }
+
   ngOnDestroy(): void {
     // this.subscription.unsubscribe();
   }

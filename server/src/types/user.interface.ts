@@ -6,6 +6,6 @@ export interface User extends Document {
   birthdate: String;
   firstName: String;
   lastName: String;
-  Email: String;
+  email: String;
   createdAt: Date;
 }

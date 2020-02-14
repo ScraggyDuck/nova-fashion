@@ -117,6 +117,9 @@
                     <div class="row dropdown">
                         <div class="col-sm-12 full-width active">
                             <h3 class="nova-login-title mb-2">Login to your account </h3>
+                            <div *ngIf="isLoginFailed" class="alert alert-danger" role="alert">
+                                Login Failed!
+                            </div>
                             <form #heroForm="ngForm">
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email" required=""
@@ -211,13 +214,13 @@
                 </div>
 
 
-                <div *ngIf="isLogged" class="dropdown-menu popup-content-info text-center">
-                    <a routerLink="/profile" class="dropdown-item" href="#">
-                        <i class="fa fa-user" aria-hidden="true"></i>
+                <div *ngIf="isLogged" class="dropdown-menu popup-content-info">
+                    <a routerLink="/profile" class="dropdown-item px-3" href="#">
+                        <i class="fa fa-user mr-2" aria-hidden="true"></i>
                         {{currentUser?.firstName}} {{currentUser?.lastName}}
                     </a>
-                    <a class="dropdown-item mt-2" href="#">
-                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <a class="c-pointer dropdown-item mt-2 px-3" (click)="logout()">
+                        <i class="fa fa-sign-out mr-2" aria-hidden="true"></i>
                         Sign out
                     </a>
                 </div>

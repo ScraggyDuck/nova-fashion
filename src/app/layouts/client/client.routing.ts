@@ -1,6 +1,7 @@
 import { ClientComponent } from "./client.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { AuthGuard } from "src/app/guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
       {
         path: "profile",
         loadChildren:
-          "../../routes/my-profile/my-profile.module#MyProfileModule"
+          "../../routes/my-profile/my-profile.module#MyProfileModule",
+        canActivate: [AuthGuard]
       }
     ]
   }

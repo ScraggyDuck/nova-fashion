@@ -10,7 +10,7 @@ export const UserSchema = new mongoose.Schema({
   birthdate: String,
   firstName: String,
   lastName: String,
-  Email: String,
+  email: String,
   created: { type: Date, default: Date.now }
 });
 

@@ -11,6 +11,8 @@ export class UserService {
   constructor(@InjectModel("User") private userModel: Model<User>) {}
 
   async create(userDTO: RegisterDTO) {
+    console.log(userDTO);
+
     const { email } = userDTO;
     const user = await this.userModel.findOne({ email });
 
@@ -18,13 +20,15 @@ export class UserService {
       throw new HttpException("User already exists", HttpStatus.BAD_REQUEST);
     }
 
+    userDTO.email = userDTO.email.toLowerCase();
     const createdUser = new this.userModel(userDTO);
     await createdUser.save();
     return this.sanitizeUser(createdUser);
   }
 
   async findByLogin(userDTO: LoginDTO) {
-    const { email, password } = userDTO;
+    let { email, password } = userDTO;
+    email = email.toLowerCase();
     const user = await this.userModel
       .findOne({ email })
       .select("email gender firstName lastName birthdate password created");
