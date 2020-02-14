@@ -2,11 +2,15 @@ import * as bcrypt from "bcrypt";
 import * as mongoose from "mongoose";
 
 export const UserSchema = new mongoose.Schema({
-  username: String,
   password: {
     type: String,
     select: false
   },
+  gender: String,
+  birthdate: String,
+  firstName: String,
+  lastName: String,
+  Email: String,
   created: { type: Date, default: Date.now }
 });
 

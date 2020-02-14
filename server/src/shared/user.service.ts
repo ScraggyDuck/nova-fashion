@@ -11,8 +11,8 @@ export class UserService {
   constructor(@InjectModel("User") private userModel: Model<User>) {}
 
   async create(userDTO: RegisterDTO) {
-    const { username } = userDTO;
-    const user = await this.userModel.findOne({ username });
+    const { email } = userDTO;
+    const user = await this.userModel.findOne({ email });
 
     if (user) {
       throw new HttpException("User already exists", HttpStatus.BAD_REQUEST);
@@ -24,10 +24,10 @@ export class UserService {
   }
 
   async findByLogin(userDTO: LoginDTO) {
-    const { username, password } = userDTO;
+    const { email, password } = userDTO;
     const user = await this.userModel
-      .findOne({ username })
-      .select("username password created");
+      .findOne({ email })
+      .select("email gender firstName lastName birthdate password created");
     if (!user) {
       throw new HttpException("Invalid credentials", HttpStatus.UNAUTHORIZED);
     }
@@ -40,8 +40,8 @@ export class UserService {
   }
 
   async findByPayload(payload: Payload) {
-    const { username } = payload;
-    return await this.userModel.findOne({ username });
+    const { email } = payload;
+    return await this.userModel.findOne({ email });
   }
 
   sanitizeUser(user: User) {

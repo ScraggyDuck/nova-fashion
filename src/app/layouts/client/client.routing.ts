@@ -21,6 +21,11 @@ const routes: Routes = [
         path: "clothes/:id",
         loadChildren:
           "../../routes/product-detail/product-detail.module#ProductDetailModule"
+      },
+      {
+        path: "profile",
+        loadChildren:
+          "../../routes/my-profile/my-profile.module#MyProfileModule"
       }
     ]
   }

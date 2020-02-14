@@ -28,6 +28,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   _isLogged() {
     this.isLogged = this.userService.isLogged();
+    const user = this.localService.getItem("user");
+    if (user) {
+      this.currentUser = user;
+    }
   }
 
   onHoverBoxUser() {
@@ -43,6 +47,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
           this.localService.setItem("user", user);
           this.isLogged = true;
           this.openBoxUser = false;
+          this.currentUser = user;
         },
         err => console.log(err)
       );

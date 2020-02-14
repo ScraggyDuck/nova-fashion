@@ -211,8 +211,15 @@
                 </div>
 
 
-                <div *ngIf="isLogged" class="dropdown-menu popup-content-info">
-                    <h6>Ten ne: {{currentUser?.username}}</h6>
+                <div *ngIf="isLogged" class="dropdown-menu popup-content-info text-center">
+                    <a routerLink="/profile" class="dropdown-item" href="#">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        {{currentUser?.firstName}} {{currentUser?.lastName}}
+                    </a>
+                    <a class="dropdown-item mt-2" href="#">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        Sign out
+                    </a>
                 </div>
             </div>
         </div>

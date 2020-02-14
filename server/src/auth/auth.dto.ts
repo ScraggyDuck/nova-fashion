@@ -4,7 +4,7 @@ export class LoginDTO {
   @IsString()
   @MinLength(4)
   @MaxLength(20)
-  username: string;
+  email: string;
 
   @IsString()
   @MinLength(8)
@@ -19,7 +19,27 @@ export class RegisterDTO {
   @IsString()
   @MinLength(4)
   @MaxLength(20)
-  username: string;
+  email: string;
+
+  @IsString()
+  @MinLength(4)
+  @MaxLength(20)
+  fisrtName: string;
+
+  @IsString()
+  @MinLength(4)
+  @MaxLength(20)
+  lastName: string;
+
+  @IsString()
+  @MinLength(4)
+  @MaxLength(20)
+  gender: string;
+
+  @IsString()
+  @MinLength(4)
+  @MaxLength(20)
+  birthdate: string;
 
   @IsString()
   @MinLength(8)

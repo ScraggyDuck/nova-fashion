@@ -100,6 +100,10 @@
       }
     }
 
+    .popup-content-info {
+      @extend .popup-content;
+      width: 200px !important;
+    }
     .popup-content {
       width: 300px;
       padding: 20px;

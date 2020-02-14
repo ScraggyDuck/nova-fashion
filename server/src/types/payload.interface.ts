@@ -1,3 +1,3 @@
 export interface Payload {
-  username: String;
+  email: String;
 }
