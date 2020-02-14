@@ -6,12 +6,12 @@ import { Injectable } from "@angular/core";
 export class LocalService {
   constructor() {}
 
-  setItem(value: any) {
-    localStorage.setItem("token", JSON.stringify(value));
+  setItem(key: string, value: any) {
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
-  getItem() {
-    let value = localStorage.getItem("token");
+  getItem(key: string) {
+    let value = localStorage.getItem(key);
     if (value && value != "undefined") {
       return JSON.parse(value);
     } else {
@@ -19,7 +19,7 @@ export class LocalService {
     }
   }
 
-  remove() {
-    localStorage.removeItem("token");
+  remove(key: string) {
+    localStorage.removeItem(key);
   }
 }

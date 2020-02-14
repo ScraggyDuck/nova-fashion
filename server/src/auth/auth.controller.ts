@@ -24,7 +24,7 @@ export class AuthController {
   @Post("login")
   async login(
     @Body(ValidationPipe) userDTO: LoginDTO
-  ): Promise<{ accessToken: string }> {
+  ): Promise<{ user: User; accessToken: string }> {
     return this.authService.validateUser(userDTO);
   }
 

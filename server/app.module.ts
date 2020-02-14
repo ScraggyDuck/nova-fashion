@@ -4,9 +4,11 @@ import { join } from "path";
 
 import { MongooseModule } from "@nestjs/mongoose";
 import { ProductModule } from "./src/product/product.module";
-import { AuthModule } from './src/auth/auth.module';
-import { SharedModule } from './src/shared/shared.module';
+import { AuthModule } from "./src/auth/auth.module";
+import { SharedModule } from "./src/shared/shared.module";
 
+import "localstorage-polyfill";
+global["localStorage"] = localStorage;
 const domino = require("domino");
 const fs = require("fs");
 const path = require("path");
