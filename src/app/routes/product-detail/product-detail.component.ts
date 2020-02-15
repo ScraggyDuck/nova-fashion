@@ -9,8 +9,10 @@ import { ProductService } from "src/app/services/product.service";
   styleUrls: ["./product-detail.component.scss"]
 })
 export class ProductDetailComponent implements OnInit {
-  subscription: Subscription;
+  productSubscription: Subscription;
+  relatedProductsSubscription: Subscription;
   product: any;
+  relatedProducts: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -19,17 +21,31 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     this._getProductDetail();
+    this._getRelatedProducts();
   }
 
   _getProductDetail() {
     const productId = this.activatedRoute.snapshot.params["id"];
-    this.subscription = this.productService.getProductById(productId).subscribe(
-      data => (this.product = data),
-      err => this.productService.handleError(err)
-    );
+    this.productSubscription = this.productService
+      .getProductById(productId)
+      .subscribe(
+        data => (this.product = data),
+        err => this.productService.handleError(err)
+      );
+  }
+
+  _getRelatedProducts() {
+    const productId = this.activatedRoute.snapshot.params["id"];
+    this.relatedProductsSubscription = this.productService
+      .getRelatedProducts(productId)
+      .subscribe(
+        data => (this.relatedProducts = data),
+        err => this.productService.handleError(err)
+      );
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.productSubscription.unsubscribe();
+    this.relatedProductsSubscription.unsubscribe();
   }
 }

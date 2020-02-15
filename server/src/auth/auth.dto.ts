@@ -30,9 +30,6 @@ export class RegisterDTO {
   lastName: string;
 
   @IsString()
-  gender: string;
-
-  @IsString()
   birthdate: string;
 
   @IsString()

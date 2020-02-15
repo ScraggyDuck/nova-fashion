@@ -1,4 +1,4 @@
-import { api_url, rq_product } from "./../utils/BaseValue";
+import { api_url, rq_product, rq_product_related } from "./../utils/BaseValue";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -15,6 +15,10 @@ export class ProductService {
 
   getProductById(id: any): Observable<any> {
     return this.http.get(`${api_url}${rq_product}/${id}`);
+  }
+
+  getRelatedProducts(id: any): Observable<any> {
+    return this.http.get(`${api_url}${rq_product_related}/${id}`);
   }
 
   handleError(err) {

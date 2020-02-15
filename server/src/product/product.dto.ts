@@ -1,3 +1,5 @@
+import { Product } from "../types/product.interface";
+
 export class CreateProductDTO {
   name: string;
   images: [string];
@@ -11,4 +13,5 @@ export class CreateProductDTO {
   categories: [string];
   createdAt: Date;
   isFeatured: boolean;
+  relatedProducts: [Product];
 }

@@ -25,6 +25,11 @@ export class ProductController {
     return await this.productService.findById(id);
   }
 
+  @Get("related/:id")
+  async getRelatedProducts(@Param("id") id: string): Promise<Product[]> {
+    return await this.productService.findRelatedProducts(id);
+  }
+
   @Post()
   async create(@Body() product: CreateProductDTO): Promise<Product> {
     return await this.productService.create(product);

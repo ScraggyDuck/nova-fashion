@@ -20,6 +20,13 @@ export class ProductService {
     return product;
   }
 
+  async findRelatedProducts(id: string): Promise<Product[]> {
+    const { relatedProducts } = await this.productModel
+      .findById(id)
+      .populate("relatedProducts");
+    return relatedProducts;
+  }
+
   async create(productDTO: CreateProductDTO): Promise<Product> {
     const product = await this.productModel.create({
       ...productDTO

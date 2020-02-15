@@ -13,4 +13,5 @@ export interface Product extends Document {
   categories: [String];
   createdAt: Date;
   isFeatured: Boolean;
+  relatedProducts: [Product];
 }

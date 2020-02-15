@@ -43,6 +43,7 @@ global["document"] = win.document;
 global["CSS"] = null;
 
 import { ConfigModule } from "@nestjs/config";
+import { OrderModule } from './src/order/order.module';
 
 @Module({
   imports: [
@@ -62,7 +63,8 @@ import { ConfigModule } from "@nestjs/config";
     ProductModule,
     AuthModule,
     SharedModule,
-    ContactModule
+    ContactModule,
+    OrderModule
   ],
   controllers: []
 })

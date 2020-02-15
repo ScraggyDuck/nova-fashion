@@ -1,12 +1,19 @@
 import * as bcrypt from "bcrypt";
 import * as mongoose from "mongoose";
 
+export enum Gender {
+  MALE = "male",
+  FEMALE = "female"
+}
+
 export const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     select: false
   },
-  gender: String,
+  gender: {
+    type: Gender
+  },
   birthdate: String,
   firstName: String,
   lastName: String,
