@@ -1,12 +1,13 @@
 import { Module } from "@nestjs/common";
 import { AngularUniversalModule } from "@nestjs/ng-universal";
 import { join } from "path";
-
 import { MongooseModule } from "@nestjs/mongoose";
 import { ProductModule } from "./src/product/product.module";
 import { AuthModule } from "./src/auth/auth.module";
 import { SharedModule } from "./src/shared/shared.module";
 import { ContactModule } from "./src/contact/contact.module";
+import { ConfigModule } from "@nestjs/config";
+import { OrderModule } from "./src/order/order.module";
 
 import "localstorage-polyfill";
 global["localStorage"] = localStorage;
@@ -41,9 +42,6 @@ Object.defineProperty(win.document.body.style, "transform", {
 });
 global["document"] = win.document;
 global["CSS"] = null;
-
-import { ConfigModule } from "@nestjs/config";
-import { OrderModule } from './src/order/order.module';
 
 @Module({
   imports: [
