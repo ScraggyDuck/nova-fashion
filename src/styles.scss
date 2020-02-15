@@ -46,3 +46,58 @@
 .nova-description {
   font-size: 16px;
 }
+
+.form-control {
+  height: 50px;
+  font-size: 14px;
+  padding: 8px 10px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 0;
+
+  &:active,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+// .form-control-select {
+//   height: 42px;
+//   -moz-appearance: none;
+//   -webkit-appearance: none;
+//   background: #ebebeb
+//     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAPklEQ…Q8IEmSMOsiuEfg3gL3oXC7wK0bd1G4o8X9F4yIkyQfSrIByQBjp7QuND8AAAAASUVORK5CYII=);
+//   background-repeat: no-repeat;
+//   background-attachment: scroll;
+//   background-position: right center;
+//   background-position-x: 99%;
+//   background-size: 20px 20px;
+//   padding-right: 32px;
+// }
+
+.form-control-label {
+  padding-top: 5px;
+  font-size: 14px;
+  color: #414141;
+  font-weight: 600;
+}
+
+a {
+  transition: all 0.2s ease-in-out;
+  color: #414141;
+
+  &:hover {
+    color: #e97e3d;
+    text-decoration: none;
+  }
+}
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

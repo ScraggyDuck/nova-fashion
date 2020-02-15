@@ -1,0 +1,70 @@
+.nova-profile-detail-header {
+  background: #f7f7f9;
+  padding: 20px 0;
+}
+
+.card {
+  box-shadow: 2px 2px 11px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+}
+
+form {
+  h3 {
+    padding: 20px;
+    color: #414141;
+    font-weight: 600;
+    font-size: 21px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+
+.block {
+  color: #666;
+  h4 {
+    margin: 30px 0;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    margin: auto;
+    color: #e97e3d;
+    border-radius: 50px;
+    box-shadow: 0 0 0 2px #e97e3d;
+    transition: box-shadow 0.2s;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 82px;
+      height: 82px;
+      top: -1px;
+      left: -1px;
+      padding: 0;
+      z-index: 10;
+      border: 1px dashed #e97e3d;
+      visibility: hidden;
+      opacity: 0;
+      border-radius: 50px;
+    }
+
+    i {
+      font-size: 32px;
+      line-height: 80px;
+    }
+  }
+
+  &:hover {
+    .icon {
+      box-shadow: 0 0 0 4px rgba(254, 108, 97, 0);
+      &:after {
+        visibility: visible;
+        opacity: 1;
+        animation: spinAround 9s linear infinite;
+      }
+    }
+  }
+}

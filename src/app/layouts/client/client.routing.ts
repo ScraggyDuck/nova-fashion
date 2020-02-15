@@ -28,6 +28,10 @@ const routes: Routes = [
         loadChildren:
           "../../routes/my-profile/my-profile.module#MyProfileModule",
         canActivate: [AuthGuard]
+      },
+      {
+        path: "contact",
+        loadChildren: "../../routes/contact/contact.module#ContactModule"
       }
     ]
   }
