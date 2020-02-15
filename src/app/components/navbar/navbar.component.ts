@@ -13,11 +13,17 @@ export class NavbarComponent implements OnInit, OnDestroy {
   password: string = "";
   isLogged = false;
   openBoxUser = false;
-
+  isRegister = true;
   isLoginFailed = false;
-
   currentUser: any = {};
   subscription: Subscription;
+  subscriptionReg: Subscription;
+
+  fisrtName: string = "";
+  lastName: string = "";
+  emailReg: string = "";
+  passwordReg: string = "";
+  isRegisterFailed = false;
 
   constructor(
     private userService: UserService,
@@ -38,6 +44,38 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   onHoverBoxUser() {
     this._isLogged();
+  }
+
+  openRegister() {
+    this.isRegister = true;
+  }
+
+  openLogin() {
+    this.isRegister = false;
+  }
+
+  onRegister() {
+    this.subscriptionReg = this.userService
+      .register({
+        email: this.emailReg,
+        password: this.passwordReg,
+        firstName: this.fisrtName,
+        lastName: this.lastName
+      })
+      .subscribe(
+        data => {
+          this.email = this.emailReg;
+          this.password = this.passwordReg;
+          this.onLogin();
+          this.isRegisterFailed = false;
+          (this.email = ""), (this.password = "");
+          (this.emailReg = ""),
+            (this.passwordReg = ""),
+            (this.lastName = ""),
+            (this.fisrtName = "");
+        },
+        err => (this.isRegisterFailed = true)
+      );
   }
 
   onLogin() {

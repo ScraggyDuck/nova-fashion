@@ -114,13 +114,13 @@
                     <i class="fa fa-user"></i>
                 </a>
                 <div *ngIf="!isLogged" class="popup-content dropdown-menu">
-                    <div class="row dropdown">
-                        <div class="col-sm-12 full-width active">
+                    <div class="row dropdown position-relative">
+                        <div [class.active]="!isRegister" class="col-12 login">
                             <h3 class="nova-login-title mb-2">Login to your account </h3>
                             <div *ngIf="isLoginFailed" class="alert alert-danger" role="alert">
                                 Login Failed!
                             </div>
-                            <form #heroForm="ngForm">
+                            <form>
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email" required=""
                                         placeholder="Email Address" [(ngModel)]="email">
@@ -153,51 +153,64 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <a class="p-0" href="#">No account? Create one here ?</a>
+                                    <div class="p-0 c-pointer" (click)="openRegister()">No account? Create
+                                        one here ?
+                                    </div>
                                 </div>
                             </form>
                         </div>
-                        <!-- <div class="leo-form leo-register-form col-sm-12 full-width leo-form-inactive">
-                            <h3 class="leo-register-title"> New Account Register</h3>
-                            <form class="lql-form-content leo-register-form-content" action="#" method="post">
-                                <div class="form-group lql-form-mesg has-success"></div>
-                                <div class="form-group lql-form-mesg has-danger"></div>
-                                <div class="form-group lql-form-content-element"> <input type="text"
-                                        class="form-control lql-register-firstname" name="lql-register-firstname"
-                                        placeholder="First Name"></div>
-                                <div class="form-group lql-form-content-element"> <input type="text"
-                                        class="form-control lql-register-lastname" name="lql-register-lastname"
-                                        required="" placeholder="Last Name"></div>
-                                <div class="form-group lql-form-content-element"> <input type="email"
-                                        class="form-control lql-register-email" name="lql-register-email" required=""
-                                        placeholder="Email Address"></div>
-                                <div class="form-group lql-form-content-element"> <input type="password"
-                                        class="form-control lql-register-pass" name="lql-register-pass" required=""
-                                        placeholder="Password"></div> <label>
-                                    <div class="form-group lql-form-content-element leo-form-chk"> <input
-                                            type="checkbox" class="lql-register-check" name="lql-register-check">I agree
-                                        to the terms.</div>
-                                </label>
-                                <div class="form-group text-right"> <button type="submit" name="submit"
-                                        class="form-control-submit lql-form-bt lql-register-bt btn btn-primary"> <span
-                                            class="leoquicklogin-loading leoquicklogin-cssload-speeding-wheel"></span>
-                                        <i class="leoquicklogin-icon leoquicklogin-success-icon material-icons"></i> <i
-                                            class="leoquicklogin-icon leoquicklogin-fail-icon material-icons"></i>
-                                        <span class="lql-bt-txt"> Create an Account </span> </button>
-                                    <div class="checkbox idxjslopd-check-newsletter"><label
-                                            class="form-check-label"><input type="checkbox" id="Register"
-                                                name="acceptLopd" class=""><a href="#">I accept conditions</a> <span
-                                                style="color:red">*</span></label><br><span
-                                            class="check-error-newsletter2" style="display:none;color:red;">Click on the
-                                            checkbox.</span><span class="text_bt"><span></span></span></div>
+                        <div [class.active]="isRegister" class="col-12 register">
+                            <h3 class="nova-login-title mb-2"> New Account Register</h3>
+                            <div *ngIf="isRegisterFailed" class="alert alert-danger" role="alert">
+                                Register Failed!
+                            </div>
+                            <form #myForm="ngForm">
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name"
+                                        [(ngModel)]="fisrtName" name="firstname">
                                 </div>
-                                <div class="form-group lql-calllogin">
-                                    <div>Already have an account?</div> <a role="button" href="#"
-                                        class="lql-calllogin-action">Log in instead</a> Or <a role="button" href="#"
-                                        class="lql-calllogin-action lql-callreset-action">Reset password</a>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required="" placeholder="Last Name"
+                                        [(ngModel)]="lastName" name="lastname">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" required="" placeholder="Email Address"
+                                        [(ngModel)]="emailReg" name="emailreg">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" class="form-control" required="" placeholder="Password"
+                                        [(ngModel)]="passwordReg" name="passreg">
+                                </div>
+
+                                <label>
+                                    <div class="form-group">
+                                        <input type="checkbox">I agree to the terms.
+                                    </div>
+                                </label>
+                                <div class="form-group ">
+                                    <button type="button" class="form-control-submit btn btn-primary w-100 mb-3"
+                                        (click)="onRegister()">
+                                        Register
+                                    </button>
+                                    <div class="checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="acceptLopd">
+                                            <a href="#">I accept conditions</a>
+                                            <span style="color:red">*</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div>Already have an account?</div>
+                                    <div role="button" class="c-pointer p-0 d-inline mr-3" (click)="openLogin()">Log in
+                                        instead</div>
+                                    Or
+                                    <a role="button" href="#">Reset password</a>
                                 </div>
                             </form>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="nova-social-login">
                         <h3 class="nova-social-login-title"> Connect with Social Networks</h3>
@@ -221,7 +234,7 @@
                     </a>
                     <a class="c-pointer dropdown-item mt-2 px-3" (click)="logout()">
                         <i class="fa fa-sign-out mr-2" aria-hidden="true"></i>
-                        Sign out
+                        Log out
                     </a>
                 </div>
             </div>

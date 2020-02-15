@@ -109,6 +109,7 @@
       padding: 20px;
       margin: 0;
       position: absolute;
+      overflow: hidden;
       top: 100%;
       background: #fff;
       border: none;
@@ -121,6 +122,30 @@
       transition: opacity 0.3s linear 0s;
       border-radius: 0;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+      .login {
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease-in-out;
+        height: 0;
+        &.active {
+          transform: translateX(0);
+          height: 100%;
+        }
+      }
+
+      .register {
+        transform: translateX(100%);
+
+        transition: transform 0.3s ease-in-out;
+        height: 0;
+
+        &.active {
+          transform: translateX(0);
+
+          height: 100%;
+        }
+      }
 
       .form-control-submit {
         display: block;

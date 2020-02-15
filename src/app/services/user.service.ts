@@ -1,4 +1,4 @@
-import { api_url, rq_user_login } from "./../utils/BaseValue";
+import { api_url, rq_user_login, rq_user_register } from "./../utils/BaseValue";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -25,6 +25,10 @@ export class UserService {
 
   login(user: any): Observable<any> {
     return this.http.post(`${api_url}${rq_user_login}`, user);
+  }
+
+  register(userReg: any): Observable<any> {
+    return this.http.post(`${api_url}${rq_user_register}`, userReg);
   }
 
   logout() {
