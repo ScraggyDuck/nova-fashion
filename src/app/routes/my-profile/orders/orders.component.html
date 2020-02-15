@@ -1,0 +1,79 @@
+<div class="nova-my-profile mt-4 mb-5 container-fluid">
+    <h3 class="text-center">Order history</h3>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card p-4 m-3">
+                <section id="content" class="page-content">
+                    <aside id="notifications">
+                        <div class="container"></div>
+                    </aside>
+                    <h6 class="font-weight-bold mb-4">Here are the orders you've placed since your account was created.
+                    </h6>
+                    <table class="table table-striped table-bordered d-none d-md-table">
+                        <thead class="thead-default">
+                            <tr>
+                                <th>Order reference</th>
+                                <th>Date</th>
+                                <th>Total price</th>
+                                <th class="d-none d-lg-table-cell">Payment</th>
+                                <th>Status</th>
+                                <th class="d-none d-lg-table-cell">Invoice</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of orders">
+                                <th scope="row">{{order?.orderRef}}</th>
+                                <td>{{order?.createdAt | date}}</td>
+                                <td class="text-right">${{orderTotal(order)}}</td>
+                                <td class="d-none d-lg-table-cell">Payments by {{order?.paymentMethod}}</td>
+                                <td> <span class="label text-white py-1 px-3 rounded" style="background-color:#4169E1">
+                                        {{order?.paid ? 'Paid' :'Awaiting
+                                    check payment '}}
+                                    </span></td>
+                                <td class="text-sm-center d-none d-lg-table-cell"> -</td>
+                                <td class="text-sm-center order-actions">
+                                    <a [routerLink]="order?._id"> Details </a>
+                                    <a class="ml-2" href="#">Reorder</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="orders d-md-none mx-2">
+                        <div *ngFor="let order of orders" class="order row border-bottom pb-3 my-2">
+                            <div class="col-10">
+                                <a>
+                                    <h3>{{order?.orderRef}}</h3>
+                                </a>
+                                <div class="date">{{order?.createdAt | date}}</div>
+                                <div class="total">${{orderTotal(order)}}</div>
+                                <div class="status mt-2"> <span class="label rounded text-white px-2 py-1"
+                                        style="background-color:#4169E1; font-size: 12px;"> {{order?.paid ? 'Paid' :'Awaiting
+                                        check payment '}}
+                                    </span></div>
+                            </div>
+                            <div class="col-2 text-right">
+                                <div> <a [routerLink]="order?._id"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                </div>
+                                <div> <a href="#"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text-uppercase ml-4">
+        <a routerLink="/profile" class="text-reset btn-back-your-account">
+            <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i>
+            Back to your account
+        </a>
+    </div>
+</div>

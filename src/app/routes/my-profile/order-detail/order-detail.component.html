@@ -1,0 +1,167 @@
+<div class="nova-my-profile mt-4 mb-5 container-fluid">
+    <h3 class="text-center">Order details</h3>
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card my-2 p-3">
+                <div class="row">
+                    <div class="col-md-7">
+                        <strong> Order Reference {{order?.orderRef}} - placed on
+                            {{order?.createdAt | date}}
+                        </strong>
+                    </div>
+                    <div class="col-md-5">
+                        <a href="#">Reorder</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card my-2 p-3">
+                <ul class="list-unstyled">
+                    <li><strong>Carrier</strong> My carrier</li>
+                    <li><strong>Payment method</strong> Payments by {{order?.paymentMethod}}</li>
+                </ul>
+            </div>
+
+            <div class="card my-2 p-3">
+                <h6 class="text-uppercase font-weight-bold">Follow your order's status step-by-step</h6>
+                <table class="table table-striped table-bordered d-none d-md-table">
+                    <thead class="thead-default">
+                        <tr>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{order?.createdAt | date}}</td>
+                            <td> <span class="label rounded py-1 px-2 text-white" style="background-color:#4169E1">
+                                    {{order?.paid ? 'Paid' : 'Awaiting check payment'}}
+                                </span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="d-md-none">
+                    <div class="history-line">
+                        <div class="date mb-3">{{order?.createdAt | date}}</div>
+                        <div class="state"> <span class="label rounded py-1 px-2 text-white"
+                                style="background-color:#4169E1">
+                                {{order?.paid ? 'Paid' : 'Awaiting check payment'}}</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <article id="delivery-address" class="card my-2 p-3">
+                        <h6 class="text-uppercase font-weight-bold">Delivery address My Address</h6>
+                        <address>{{order?.owner.firstName}}
+                            {{order?.owner.lastName}}<br>{{order?.address}}<br>{{order?.state}}, {{order?.city}}
+                            {{order?.zipCode}}<br>{{order?.country}}</address>
+                    </article>
+                </div>
+                <div class="col-md-6">
+                    <article id="invoice-address" class="card my-2 p-3">
+                        <h6 class="text-uppercase font-weight-bold">Invoice address My Address</h6>
+                        <address>{{order?.owner.firstName}}
+                            {{order?.owner.lastName}}<br>{{order?.address}}<br>{{order?.state}}, {{order?.city}}
+                            {{order?.zipCode}}<br>{{order?.country}}</address>
+                    </article>
+                </div>
+            </div>
+            <div class="card my-2 p-3 d-none d-md-block">
+                <table class="table table-bordered">
+                    <thead class="thead-default">
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Unit price</th>
+                            <th>Total price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of order?.products">
+                            <td> <strong> <a> {{item?.product.name}} - Size : {{item?.size}} </a> </strong>
+                            </td>
+                            <td>{{item?.quantity}}</td>
+                            <td class="text-right">${{item?.product.price}}</td>
+                            <td class="text-right">${{item?.quantity*item?.product.price}}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+
+                        <tr class="text-right line-total">
+                            <td colspan="3"><b>Total</b></td>
+                            <td>${{orderTotal(order)}}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div *ngFor="let item of order?.products" class="card order my-2 p-3 d-md-none">
+                <div class="row">
+                    <div class="col-md-5 desc">
+                        <div class="name"> {{item?.product.name}} - Size : {{item?.size}} </div>
+                    </div>
+                    <div class="col-md-7 qty">
+                        <div class="row">
+                            <div class="col-4 text-left">${{item?.product.price}}</div>
+                            <div class="col-4 text-center">{{item?.quantity}}</div>
+                            <div class="col-4 text-right">${{item?.quantity*item?.product.price}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-totals card my-2 p-3 d-md-none">
+                <div class="order-total row">
+                    <div class="col-8"><strong>Total</strong></div>
+                    <div class="col-4 text-right">${{orderTotal(order)}}</div>
+                </div>
+            </div>
+
+            <div class="card my-2 p-3">
+                <table class="table table-striped table-bordered d-none d-md-table">
+                    <thead class="thead-default">
+                        <tr>
+                            <th>Date</th>
+                            <th>Carrier</th>
+                            <th>Weight</th>
+                            <th>Shipping cost</th>
+                            <th>Tracking number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{order?.createdAt | date}}</td>
+                            <td>My carrier</td>
+                            <td>-</td>
+                            <td>$7.00</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="d-md-none shipping-lines">
+                    <div class="shipping-line ">
+                        <ul class="list-unstyled">
+                            <li> <strong>Date</strong>{{order?.createdAt | date}}</li>
+                            <li> <strong>Carrier</strong> My carrier</li>
+                            <li> <strong>Weight</strong> -</li>
+                            <li> <strong>Shipping cost</strong> $7.00</li>
+                            <li> <strong>Tracking number</strong> -</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="text-uppercase ml-4 mt-4">
+        <a routerLink="/profile/orders" class="text-reset btn-back-your-orders">
+            <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i>
+            Back to your orders
+        </a>
+    </div>
+</div>

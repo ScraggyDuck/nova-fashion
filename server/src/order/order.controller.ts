@@ -1,5 +1,5 @@
 import { User } from "./../types/user.interface";
-import { Controller, Get, UseGuards, Post, Body } from "@nestjs/common";
+import { Controller, Get, UseGuards, Post, Body, Param } from "@nestjs/common";
 import { AuthGuard } from "@nestjs/passport";
 import { GetUser } from "../auth/getUser.decorator";
 import { OrderService } from "./order.service";
@@ -13,6 +13,11 @@ export class OrderController {
   @Get()
   listOrders(@GetUser() { _id }: User) {
     return this.orderService.listOrdersByUser(_id);
+  }
+
+  @Get(":id")
+  getOrderById(@GetUser() { _id }: User, @Param("id") orderId: string) {
+    return this.orderService.getOrderById(_id, orderId);
   }
 
   @Post()

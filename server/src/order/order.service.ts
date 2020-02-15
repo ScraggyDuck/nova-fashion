@@ -20,6 +20,18 @@ export class OrderService {
     return orders;
   }
 
+  async getOrderById(userId: string, orderId: string) {
+    const order = await this.orderModel
+      .find({ owner: userId, _id: orderId })
+      .populate("owner")
+      .populate("products.product");
+
+    if (!order) {
+      throw new HttpException("No Order Found", HttpStatus.NO_CONTENT);
+    }
+    return order[0];
+  }
+
   async createOrder(orderDTO: CreateOrderDTO, userId: string) {
     const createOrder = {
       owner: userId,

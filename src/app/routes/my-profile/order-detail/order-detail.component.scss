@@ -1,0 +1,19 @@
+th {
+  color: #acaaa6;
+  background-color: #f6f6f6;
+}
+
+.date,
+.total {
+  color: #acaaa6;
+  font-size: 14px;
+}
+
+.btn-back-your-orders {
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  &:hover {
+    color: #e97e3d !important;
+  }
+}

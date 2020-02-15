@@ -1,0 +1,24 @@
+.btn-back-your-account {
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  &:hover {
+    color: #e97e3d !important;
+  }
+}
+
+table {
+  font-size: 14px;
+}
+
+.order {
+  color: #878787;
+  .date,
+  .total {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
