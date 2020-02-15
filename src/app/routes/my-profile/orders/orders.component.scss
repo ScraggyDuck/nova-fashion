@@ -6,6 +6,11 @@
     color: #e97e3d !important;
   }
 }
+.card {
+  box-shadow: 2px 2px 11px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border-color: white;
+}
 
 table {
   font-size: 14px;
