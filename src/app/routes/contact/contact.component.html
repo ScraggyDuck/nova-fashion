@@ -13,7 +13,7 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.0602084908032!2d106.77951471462353!3d10.883025292249254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d89aad780e49%3A0x54542761d4c22175!2zS8O9IHTDumMgeMOhIEtodSBCIMSQ4bqhaSBo4buNYyBRdeG7kWMgZ2lhIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1581759475396!5m2!1svi!2s"
                 width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         </div>
-        <div class="col-12 border-bottom py-5 mb-3">
+        <div class="col-12 border-bottom pt-5 pb-3 mb-3">
             <div class="row  text-center">
                 <div class="col-md-4">
                     <div class="block c-pointer">
@@ -69,19 +69,20 @@
                             <div class="form-group row">
                                 <label class="col-12 form-control-label">Email address</label>
                                 <div class="col-12">
-                                    <input class="form-control" name="from" type="email" placeholder="your@email.com">
+                                    <input class="form-control" name="from" type="email" placeholder="your@email.com"
+                                        [(ngModel)]="email" required>
                                 </div>
                             </div>
                             <div class="form-group row align-items-center">
                                 <label class="col-12 form-control-label">Order reference</label>
-                                <div class="col-10">
+                                <div class="col-md-10 mb-2">
                                     <select class="form-control form-control-select">
                                         <option value="">Select reference</option>
                                         <option value="45">TXEPVMNGK</option>
                                         <option value="44">EMYOINTHG</option>
                                     </select>
                                 </div>
-                                <span class="col-2 form-control-comment"> Optional </span>
+                                <span class="col-md-2 form-control-comment"> Optional </span>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -89,12 +90,12 @@
                                 <label class="col-12 form-control-label">Message</label>
                                 <div class="col-12">
                                     <textarea class="form-control" name="message" placeholder="How can we help?"
-                                        rows="3">
+                                        rows="3" [(ngModel)]="message">
                                 </textarea>
                                 </div>
                             </div>
                             <footer class="form-footer">
-                                <button class="btn btn-primary col-12 rounded-0 mb-3">Send</button>
+                                <button class="btn btn-primary col-12 rounded-0 mb-3" (click)="onSend()">Send</button>
                                 <div>
                                     <input type="checkbox" class="mr-2">
                                     <a href="#">I accept conditions</a><span style="color:red">*</span>
